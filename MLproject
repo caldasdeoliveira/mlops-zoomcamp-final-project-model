@@ -1,0 +1,10 @@
+name: mlops-zoomcamp-final-project
+
+conda_env: env.yml
+
+entry_points:
+    main:
+        parameters:
+
+            
+        command: "python train.py"
