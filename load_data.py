@@ -81,8 +81,10 @@ if __name__ == "__main__":
 
         X, y = X_y_split(df)
 
-        X_parquet = X.to_parquet(Path(base_data_path, f"X_{basename}"))
-        y_parquet = y.to_frame().to_parquet(Path(base_data_path, f"y_{basename}"))
+        X_parquet = Path(base_data_path, f"X_{basename}")
+        X.to_parquet(X_parquet)
+        y_parquet = Path(base_data_path, f"y_{basename}")
+        y.to_frame(y_parquet).to_parquet()
 
         mlflow.log_artifacts(X_parquet, "X_dataset")
         mlflow.log_artifacts(y_parquet, "y_dataset")
