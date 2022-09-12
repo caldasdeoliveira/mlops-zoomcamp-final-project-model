@@ -3,7 +3,7 @@ name: mlops-zoomcamp-final-project
 conda_env: env.yml
     source_dataset:
         parameters:
-            start_date: {type: str}
+            start_date: {type: str}
             number_of_months: {type: int, default: 1}
         command: "python source_dataset --start_date {start_date} --number_of_months {number_of_months}"
     prep_data:
