@@ -80,11 +80,12 @@ if __name__ == "__main__":
         df = filter_columns(df)
 
         X, y = X_y_split(df)
+        y = y.to_frame()
 
         X_parquet = Path(base_data_path, f"X_{basename}")
         X.to_parquet(X_parquet)
         y_parquet = Path(base_data_path, f"y_{basename}")
-        y.to_frame(y_parquet).to_parquet()
+        y.to_parquet(y_parquet)
 
         mlflow.log_artifacts(X_parquet, "X_dataset")
         mlflow.log_artifacts(y_parquet, "y_dataset")
