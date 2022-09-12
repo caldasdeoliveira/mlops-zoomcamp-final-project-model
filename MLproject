@@ -1,6 +1,8 @@
 name: mlops-zoomcamp-final-project
 
 conda_env: env.yml
+
+entry_points:
     source_dataset: 
         parameters: 
             start_date: {type: str}
