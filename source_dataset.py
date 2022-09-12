@@ -64,4 +64,6 @@ if __name__ == "__main__":
         for inc in range(number_of_months)
     ]
 
+    print(f"got date list = {date_list}")
+
     source_dataset(date_list, base_url)
