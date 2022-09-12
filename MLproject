@@ -6,12 +6,10 @@ conda_env: env.yml
             start_date: {type: str}
             number_of_months: {type: int, default: 1}
         command: "python source_dataset --start_date {start_date} --number_of_months {number_of_months}"
-
     prep_data:
         parameters:
             filename: {type: str}
         command: "python load_data.py -f {filename}"
-
     train:
         parameters:
             X_dataset: {type: str}
