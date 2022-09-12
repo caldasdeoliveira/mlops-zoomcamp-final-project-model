@@ -70,13 +70,13 @@ if __name__ == "__main__":
 
     filename = args.filename
 
-    file_path = Path(filename) #TODO clean up code
+    file_path = Path(filename)  # TODO clean up code
     basename = file_path.name
 
     base_data_path = "data"
 
     with mlflow.start_run() as mlrun:
-        df = read_dataframe(file_path)
+        df = read_dataframe(filename)
         df = filter_columns(df)
 
         X, y = X_y_split(df)
