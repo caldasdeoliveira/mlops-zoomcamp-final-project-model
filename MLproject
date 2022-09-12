@@ -1,10 +1,19 @@
 name: mlops-zoomcamp-final-project
 
 conda_env: env.yml
-
-entry_points:
-    main:
+    source_dataset:
         parameters:
+            start_date: {type: str}
+            number_of_months: {type: int, default: 1}
+        command: "python source_dataset --start_date {start_date} --number_of_months {number_of_months}"
 
-            
-        command: "python train.py"
+    prep_data:
+        parameters:
+            filename: {type: str}
+        command: "python load_data.py -f {filename}"
+
+    train:
+        parameters:
+            X_dataset: {type: str}
+            y_dataset: {type: str}
+        command: "python train.py -X {X_dataset} -y {y_dataset}"
