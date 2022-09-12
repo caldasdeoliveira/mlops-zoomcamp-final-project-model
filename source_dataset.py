@@ -16,7 +16,7 @@ def source_dataset(date_list: list[str], base_url: str):
     #    for parquet_file in list_of_parquet_files
     # )
 
-    write_path = "data/"
+    write_path = "data"
     extension = ".parquet"
 
     with mlflow.start_run() as mlrun:
