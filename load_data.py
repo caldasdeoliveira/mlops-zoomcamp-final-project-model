@@ -87,5 +87,5 @@ if __name__ == "__main__":
         y_parquet = Path(base_data_path, f"y_{basename}")
         y.to_parquet(y_parquet)
 
-        mlflow.log_artifacts(X_parquet, "X_dataset")
-        mlflow.log_artifacts(y_parquet, "y_dataset")
+        mlflow.log_artifacts(X_parquet)
+        mlflow.log_artifacts(y_parquet)
