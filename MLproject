@@ -10,7 +10,7 @@ conda_env: env.yml
         parameters: 
             filename: {type: str}
         command: "python load_data.py -f {filename}"
-    train:
+    train: 
         parameters: 
             X_dataset: {type: str}
             y_dataset: {type: str}
